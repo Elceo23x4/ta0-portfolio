@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 33% 94%;
+    --foreground: 220 14% 8%;
+    --card: 42 33% 94%;
+    --card-foreground: 220 14% 8%;
+    --popover: 42 33% 94%;
+    --popover-foreground: 220 14% 8%;
+    --primary: 220 14% 8%;
+    --primary-foreground: 42 33% 94%;
+    --secondary: 40 10% 88%;
+    --secondary-foreground: 220 14% 8%;
+    --muted: 40 10% 88%;
+    --muted-foreground: 220 3% 45%;
+    --accent: 0 60% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 10% 80%;
+    --input: 40 10% 80%;
+    --ring: 0 60% 52%;
+    --radius: 0.5rem;
+    
+    --paper-bg: #F4F1EA;
+    --ink-black: #0E0F12;
+    --crayon-red: #D13B3B;
+    --pencil-gray: #6E6F74;
+    --text-primary: #111216;
+    --text-secondary: #6E6F74;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--paper-bg);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+  }
+  
+  .font-script {
+    font-family: 'Caveat', cursive;
+  }
+  
+  .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Paper texture background */
+.paper-texture {
+  background-color: var(--paper-bg);
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 28px,
+      rgba(110, 111, 116, 0.06) 28px,
+      rgba(110, 111, 116, 0.06) 29px
+    );
+  position: relative;
+}
+
+/* Custom cursor styles - desktop only */
+@media (min-width: 1024px) {
+  body {
+    cursor: none;
+  }
+  
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
+
+.custom-cursor {
+  width: 32px;
+  height: 32px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.08s ease-out, width 0.2s, height 0.2s;
+}
+
+.custom-cursor.hover {
+  width: 48px;
+  height: 48px;
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Bobbing animation for character */
+@keyframes bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Tool drift animation */
+@keyframes drift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(8px, -4px) rotate(2deg);
+  }
+  50% {
+    transform: translate(-4px, 8px) rotate(-1deg);
+  }
+  75% {
+    transform: translate(-8px, -6px) rotate(1deg);
+  }
+}
+
+/* Stamp effect */
+.stamp {
+  position: relative;
+}
+
+.stamp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--crayon-red);
+  border-radius: 50%;
+  transform: rotate(-5deg);
+  opacity: 0.8;
+}
+
+/* Responsive typography */
+.text-hero {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  line-height: 1.1;
+}
+
+.text-section {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--paper-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pencil-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-primary);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .marquee-track {
+    animation: none;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1023px) {
+  .custom-cursor {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+  
+  a, button, [role="button"] {
+    cursor: pointer !important;
+  }
+}
+
+/* Focus states for accessibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--crayon-red);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(209, 59, 59, 0.2);
+  color: var(--text-primary);
+}

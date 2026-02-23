@@ -1,0 +1,243 @@
+/* App-specific styles */
+
+/* Smooth scroll behavior for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections stack properly */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Paper texture enhancement */
+.paper-texture {
+  position: relative;
+}
+
+/* Hero section specific */
+.hero-headline {
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Marquee enhancements */
+.marquee-container {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Book card 3D effect */
+.book-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.book-3d:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+/* Scroll container wood texture */
+.scroll-roller {
+  background: linear-gradient(
+    90deg,
+    #8B4513 0%,
+    #A0522D 20%,
+    #CD853F 50%,
+    #A0522D 80%,
+    #8B4513 100%
+  );
+  box-shadow: 
+    inset 2px 0 5px rgba(0, 0, 0, 0.3),
+    inset -2px 0 5px rgba(0, 0, 0, 0.3),
+    0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Holographic portrait effect */
+.holographic-portrait {
+  position: relative;
+}
+
+.holographic-portrait::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.15),
+    rgba(0, 255, 0, 0.15),
+    rgba(0, 0, 255, 0.15),
+    rgba(255, 255, 0, 0.15)
+  );
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: holographic-glow 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes holographic-glow {
+  0% {
+    filter: blur(8px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(8px) hue-rotate(360deg);
+  }
+}
+
+/* Flip book page styles */
+.flip-page {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.flip-page.flipping {
+  animation: page-flip 0.6s ease-in-out forwards;
+}
+
+@keyframes page-flip {
+  0% {
+    transform: rotateY(0);
+  }
+  100% {
+    transform: rotateY(-180deg);
+  }
+}
+
+/* Envelope styles */
+.envelope-paper {
+  background: linear-gradient(
+    135deg,
+    #F4F1EA 0%,
+    #E8E5DE 100%
+  );
+}
+
+/* Form input focus states */
+input:focus,
+textarea:focus {
+  box-shadow: 0 0 0 3px rgba(209, 59, 59, 0.1);
+}
+
+/* Button hover lift effect */
+.btn-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Stamp animation */
+.stamp-animate {
+  animation: stamp-bounce 0.5s ease-out;
+}
+
+@keyframes stamp-bounce {
+  0% {
+    transform: scale(1.5) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(0.9) rotate(-5deg);
+  }
+  100% {
+    transform: scale(1) rotate(-5deg);
+    opacity: 1;
+  }
+}
+
+/* Paper plane flight path */
+.paper-plane-flight {
+  animation: fly-path 2s ease-in-out forwards;
+}
+
+@keyframes fly-path {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translate(50vw, -30vh) rotate(15deg) scale(1.1);
+  }
+  100% {
+    transform: translate(100vw, -60vh) rotate(30deg) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Tool icon floating variations */
+.float-slow {
+  animation: drift 10s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: drift 7s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: drift 5s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .text-hero {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+  
+  .text-section {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .paper-texture::before {
+    opacity: 0.02;
+  }
+  
+  /* Simplify animations on mobile */
+  .animate-drift {
+    animation: none;
+  }
+  
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .custom-cursor,
+  .floating-character,
+  .floating-tools,
+  .back-to-top,
+  .bookstore-icon {
+    display: none !important;
+  }
+  
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .paper-texture {
+    background-image: none;
+  }
+  
+  .text-[#6E6F74] {
+    color: #333;
+  }
+}
