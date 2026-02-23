@@ -109,7 +109,7 @@ function FloatingCharacter() {
       style={{ width: '100px', animation: 'bob 3s ease-in-out infinite' }}
     >
       <img 
-        src="/taa0-portfolio/images/construction-character.png" 
+        src="/ta0-portfolio/images/construction-character.png" 
         alt="TAA"
         className="w-full h-auto drop-shadow-lg"
       />
@@ -317,7 +317,7 @@ function PaperPlaneSection() {
       {/* Paper Plane */}
       <img 
         ref={planeRef}
-        src="/taa0-portfolio/images/paper-plane.png" 
+        src="/ta0-portfolio/images/paper-plane.png" 
         alt="Paper Plane"
         className="relative z-10 w-[25vw] max-w-[300px] h-auto"
       />
@@ -393,7 +393,7 @@ function AchievementsSection() {
         <div 
           className="w-full rounded-lg overflow-hidden shadow-2xl p-8 lg:p-12"
           style={{
-            backgroundImage: 'url(/taa0-portfolio/images/scroll-parchment.jpg)',
+            backgroundImage: 'url(/ta0-portfolio/images/scroll-parchment.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center'
           }}
@@ -479,7 +479,7 @@ function JourneySection() {
           <div 
             className="absolute inset-0 opacity-10 rounded-sm"
             style={{
-              backgroundImage: 'url(/taa0-portfolio/images/blueprint-paper.jpg)',
+              backgroundImage: 'url(/ta0-portfolio/images/blueprint-paper.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -497,7 +497,7 @@ function JourneySection() {
             >
               <div className="relative w-[200px] h-[200px] lg:w-[250px] lg:h-[250px] rounded-full overflow-hidden shadow-2xl border-4 border-white">
                 <img 
-                  src="/taa0-portfolio/images/creator-portrait.jpg" 
+                  src="/ta0-portfolio/images/creator-portrait.jpg" 
                   alt="T.A. Ashaolu"
                   className="w-full h-full object-cover"
                 />
@@ -538,17 +538,17 @@ function BooksSection() {
     {
       title:  'Valuation of Tangible and Intangible Assets',
       description: 'A comprehensive guide to property valuation techniques, covering residential and commercial assessments with real-world case studies.',
-      image: '/taa0-portfolio/images/book-cover-1.jpg'
+      image: '/ta0-portfolio/images/book-cover-1.jpg'
     },
     {
       title: 'Property Valuation | Theory and Practice',
       description: 'Essential checklists and procedures for land surveyors, ensuring accuracy and compliance in every project.',
-      image: '/taa0-portfolio/images/book-cover-2.jpg'
+      image: '/ta0-portfolio/images/book-cover-2.jpg'
     },
     {
       title: 'Valuation of Non-Landed Property Assets ',
       description: 'Mathematical concepts made accessible for construction professionals, from basic calculations to advanced formulas.',
-      image: '/taa0-portfolio/images/book-cover-3.jpg'
+      image: '/ta0-portfolio/images/book-cover-3.jpg'
     }
   ];
 
@@ -838,7 +838,7 @@ function ContactSection() {
           <div 
             className="relative rounded-lg shadow-2xl overflow-hidden"
             style={{
-              backgroundImage: 'url(/taa0-portfolio/images/envelope.jpg)',
+              backgroundImage: 'url(/ta0-portfolio/images/envelope.jpg)',
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}

@@ -5,7 +5,7 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/taa0-portfolio/',
+  base: '/ta0-portfolio/',
   build: {
     outDir: 'dist', 
     },
