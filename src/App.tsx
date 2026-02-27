@@ -39,7 +39,7 @@ function Preloader({ onComplete }: { onComplete: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0E0F12] transition-opacity duration-500">
       <div className="text-white font-script text-6xl font-bold animate-pulse">
-        TAA
+        TAA WELCOMES YOU
       </div>
     </div>
   );
@@ -230,9 +230,13 @@ function HeroSection() {
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
       {/* Headline */}
-      <h1 
+      <h1 class="text-9xl font-black uppercase tracking-tighter text-transparent 
+           bg-clip-text stroke-gray-600 stroke-2 transform scale-y-125">
+  VALUE
+</h1>
+      <h2 
         ref={headlineRef}
-        className="text-hero font-script text-center px-4 z-10 mb-8"
+        className="text-hero font-mono text-center px-4 z-10 mb-8"
       >
         <span className="word inline-block">Valuation</span>{' '}
         <span className="word inline-block">is</span>{' '}
@@ -240,10 +244,10 @@ function HeroSection() {
         <span className="word inline-block">a</span>{' '}
         <span className="word inline-block">task,</span>{' '}
         <span className="word inline-block">it&apos;s</span>{' '}
-        <span className="word inline-block">an</span>{' '}
-        <span className="word inline-block text-[#D13B3B]">art</span>
+        <span className="word inline-block">a</span>{' '}
+        <span className="word inline-block text-[#D13B3B]">product</span>
         <span className="word inline-block">.</span>
-      </h1>
+      </h2>
 
       {/* Micro line */}
       <p className="text-sm font-mono text-[#6E6F74] uppercase tracking-wider mb-12">
@@ -312,7 +316,7 @@ function PaperPlaneSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full h-[60vh] bg-white overflow-hidden flex items-center justify-center"
+      className="relative w-full h-[20vh] bg-white overflow-hidden flex items-center justify-center"
     >
       {/* Paper Plane */}
       <img 
@@ -901,7 +905,7 @@ function ContactSection() {
                     <h4 className="font-mono text-xs uppercase tracking-wider text-[#6E6F74] mb-1">
                       Email
                     </h4>
-                    <a href="mailto:hello@taa-portfolio.com" className="flex items-center gap-2 text-[#111216] hover:text-[#D13B3B] transition-colors text-sm">
+                    <a href="mailto:taashaolu@yahoo.com" className="flex items-center gap-2 text-[#111216] hover:text-[#D13B3B] transition-colors text-sm">
                       <Mail className="w-4 h-4" />
                       taashaolu@yahoo.com
                     </a>
