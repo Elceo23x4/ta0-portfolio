@@ -203,20 +203,26 @@ function HeroSection() {
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(headlineRef.current?.querySelectorAll('.word') || [], {
-        opacity: 0,
-        y: 30,
-        rotation: -3,
-        duration: 0.6,
-        stagger: 0.08,
-        ease: 'power2.out',
-        delay: 0.5
-      });
-    }, sectionRef);
+  // Make words visible immediately as fallback
+  const words = headlineRef.current?.querySelectorAll('.word');
+  if (words) {
+    gsap.set(words, { opacity: 1, y: 0, rotation: 0 });
+  }
 
-    return () => ctx.revert();
-  }, []);
+  const ctx = gsap.context(() => {
+    gsap.from(words, {
+      opacity: 0,
+      y: 30,
+      rotation: -3,
+      duration: 0.6,
+      stagger: 0.08,
+      ease: 'power2.out',
+      delay: 0.5
+    });
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
 
   const bookTitles = [
     'Property Valuation | Theory and Practice',
@@ -227,14 +233,12 @@ function HeroSection() {
   return (
     <section 
       ref={sectionRef}
-      className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
+      className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-10"
     >
       {/* Headline */}
       
       <h1 
-        ref={headlineRef}
-        className="text-hero font-mono text-center px-4 z-10 mb-8"
-      >
+        ref={headlineRef} className="text-hero font-mono text-center px-4 z-10 mb-8">
         <span className="word inline-block">Valuation</span>{' '}
         <span className="word inline-block">is</span>{' '}
         <span className="word inline-block">not</span>{' '}
