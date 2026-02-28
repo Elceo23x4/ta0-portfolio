@@ -342,21 +342,33 @@ function AchievementsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(scrollRef.current, {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-          end: 'top 30%',
-          scrub: 1
-        },
-        scaleX: 0.1,
-        opacity: 0
-      });
+  const ctx = gsap.context(() => {
+    // Safely get refs
+    const scrollElement = scrollRef.current;
+    const sectionElement = sectionRef.current;
+    
+    // Only run animations if elements exist
+    if (!scrollElement || !sectionElement) return;
 
-      gsap.from('.achievement-item', {
+    // Animate scroll indicator
+    gsap.from(scrollElement, {
+      scrollTrigger: {
+        trigger: sectionElement,
+        start: 'top 80%',
+        end: 'top 30%',
+        scrub: 1
+      },
+      scaleX: 0.1,
+      opacity: 0
+    });
+
+    // Animate achievement items
+    const achievementItems = sectionElement.querySelectorAll('.achievement-item');
+    
+    if (achievementItems.length > 0) {
+      gsap.from(achievementItems, {
         scrollTrigger: {
-          trigger: sectionRef.current,
+          trigger: sectionElement,
           start: 'top 60%',
           end: 'top 20%',
           scrub: 1
@@ -365,10 +377,11 @@ function AchievementsSection() {
         opacity: 0,
         stagger: 0.1
       });
-    }, sectionRef);
+    }
+  }, sectionRef);
 
-    return () => ctx.revert();
-  }, []);
+  return () => ctx.revert();
+}, []);
 
   const achievements = [
     'First Class and top-notch degrees in Valuation up to PhD',
