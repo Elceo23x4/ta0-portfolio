@@ -202,23 +202,26 @@ function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-  // Make words visible immediately as fallback
-  const words = headlineRef.current?.querySelectorAll('.word');
-  if (words) {
-    gsap.set(words, { opacity: 1, y: 0, rotation: 0 });
-  }
-
+useEffect(() => {
   const ctx = gsap.context(() => {
-    gsap.from(words, {
-      opacity: 0,
-      y: 30,
-      rotation: -3,
-      duration: 0.6,
-      stagger: 0.08,
-      ease: 'power2.out',
-      delay: 0.5
-    });
+    const words = headlineRef.current?.querySelectorAll('.word');
+    
+    // Only animate if words exist
+    if (words && words.length > 0) {
+      // Set initial visible state first
+      gsap.set(words, { opacity: 1, y: 0, rotation: 0 });
+      
+      // Then animate from hidden
+      gsap.from(words, {
+        opacity: 0,
+        y: 30,
+        rotation: -3,
+        duration: 0.6,
+        stagger: 0.08,
+        ease: 'power2.out',
+        delay: 0.5
+      });
+    }
   }, sectionRef);
 
   return () => ctx.revert();
