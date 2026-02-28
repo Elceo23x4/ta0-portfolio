@@ -1,6 +1,6 @@
 {
   "name": "ta0-portfolio",
-  "homepage": "https://elceo23x4.github.io/ta0-portfolio",
+  "homepage": "https://www.taashaolu.com",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@gsap/react": "^2.1.2",
     "@hookform/resolvers": "^5.2.2",
     "@radix-ui/react-accordion": "^1.2.12",

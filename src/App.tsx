@@ -39,7 +39,7 @@ function Preloader({ onComplete }: { onComplete: () => void }) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-[#0E0F12] transition-opacity duration-500">
       <div className="text-white font-script text-6xl font-bold animate-pulse">
-        TAA WELCOMES YOU
+        TAA PORTFOLIO
       </div>
     </div>
   );
@@ -230,11 +230,8 @@ function HeroSection() {
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
       {/* Headline */}
-      <h1 class="text-9xl font-black uppercase tracking-tighter text-transparent 
-           bg-clip-text stroke-gray-600 stroke-2 transform scale-y-125">
-  VALUE
-</h1>
-      <h2 
+      
+      <h1 
         ref={headlineRef}
         className="text-hero font-mono text-center px-4 z-10 mb-8"
       >
@@ -245,13 +242,13 @@ function HeroSection() {
         <span className="word inline-block">task,</span>{' '}
         <span className="word inline-block">it&apos;s</span>{' '}
         <span className="word inline-block">a</span>{' '}
-        <span className="word inline-block text-[#D13B3B]">product</span>
-        <span className="word inline-block">.</span>
-      </h2>
+        <span className="word inline-block text-[#D13B3B]">product of</span>
+        <span className="word inline-block">acquired expertise</span>
+      </h1>
 
       {/* Micro line */}
       <p className="text-sm font-mono text-[#6E6F74] uppercase tracking-wider mb-12">
-        Property valuation Services • Mentoring • Real Estate surveys
+        Assets and Property valuation Services • Mentoring and Trainings • Real Estate Surveys
       </p>
 
       {/* Marquee Strip */}
@@ -367,11 +364,13 @@ function AchievementsSection() {
   }, []);
 
   const achievements = [
-    'Registered Valuer — 40+ years of experience',
-    'Published 3 comprehensive field guides',
-    'Led 100+ successful Field Surveys and Valuation',
-    'Lectured students on Valuation for Over 25+ years',
-    'Certified Property Assessor'
+    'First Class and top-notch degrees in Valuation up to PhD',
+    'Several awards and recognition for excellent performance',
+    'Author of 3 best-selling books on Property Valuation',
+    'Certified Intellectual Property Valuer',
+    'Nearly 4 decades as a registered Estate Surveyor and Valuer',
+    'Lecturing on valuation for Over 30+ years across tertiary institutions',
+    'Mentor and consultant to various field practitioners'
   ];
 
   return (
@@ -516,12 +515,12 @@ function JourneySection() {
             {/* Text Content */}
             <div className="journey-content flex-1">
               <p className="text-lg text-[#111216] leading-relaxed mb-6">
-                Lorem ipsum. dummy text. I started in the field—measuring, sketching, questioning every assumption. 
-                Over time, valuation became a language: between numbers and the real world.
-              </p>
+                I started practising as a trainee with foremost Nigerian estate valuation firm - Harriman and Company - in 1986, I became a professional Estate Surveyor and Valuer in 1989.
+                I have had many remarkable field experiences in property and assets (tangible and intangible) valuation. On academic front, I started as a lecturer at Obafemi Awolowo University, Ile-Ife and also was a former Head of Department of Estate management and Valuation, in Federal Polytechnic, Ilaro. 
+                              </p>
               <p className="text-lg text-[#111216] leading-relaxed mb-8">
-                These books are the notes I wish I had when I began. They combine 
-                technical precision with practical wisdom gained from years of hands-on experience.
+                My books on Valuation were written out of my daring passion of knowledge sharing. They combine 
+                technical precision with practical experience and wisdom gained from years of hands-on experience.
               </p>
               <p className="font-script text-2xl text-[#D13B3B]">— T.A. Ashaolu</p>
             </div>
@@ -651,12 +650,16 @@ function FlipBookSection() {
   const [currentPage, setCurrentPage] = useState(0);
 
   const pages = [
-    { title: 'Table of Contents', content: ['Introduction', 'Methodology', 'Case Studies', 'Appendices'] },
-    { title: '1. Introduction', content: ['What is Property Valuation?', 'Key Principles', 'Market Analysis Basics', 'Regulatory Framework'] },
-    { title: '2. Methodology', content: ['Comparative Method', 'Income Approach', 'Cost Method', 'Residual Method'] },
-    { title: '3. Case Studies', content: ['Residential Property', 'Commercial Building', 'Industrial Site', 'Agricultural Land'] },
-    { title: '4. Appendices', content: ['Glossary of Terms', 'Formula Reference', 'Sample Reports', 'Contact Information'] }
-  ];
+  { title: 'Table of Contents', content: ['Introduction', 'Valuation of Tangible Assets', 'Intangible Assets', 'Valuation of Business', 'Concluding Remarks'] },
+    { title: '1. Introduction', content: ['General Introduction', 'Background to Asset Valuation- The Nigerian Example'] },
+    { title: '2. Valuation of Tangible Assets', content: ['Valuation of Furniture, Fixtures and Fittings', 'Valuation of Plant and Machinery I: Knowledge of Contents', 'Valuation of Plant and Machinery II: Procedures', 'Valuation of Vehicles', 'Valuation of Infrastructure Assets'] },
+    { title: '3. Valuation of Tangible Assets', content: ['Valuation of Mineral Assets', 'Valuation of Real Estate', 'Valuation of Environmental Sustainability and ESG Factor', 'Valuation of Jewelry, Antique Etc', 'Valuation of Construction Works', 'Valuation of Rural/Agricultural Products'] },
+    { title: '4. Intangible Assets', content: ['Valuation of Intagible Assets I: Goodwill', 'Valuation of Intagible II: Forms of Intellectual Property', 'Valuation of Intagible III: Intellectual Property', 'Valuation of Intellectual Capital', 'Valuation of Digital Assets'] },
+    { title: '5. Valuation of Business', content: ['Valuation of Business', 'Valuation of Shares'] },
+ { title: '6. Concluding Remarks', content: ['Market Survey', 'Depreciation', 'Issues Surrounding Asset Valuation'] }
+  ];        
+
+
 
   const nextPage = () => {
     if (currentPage < Math.floor((pages.length - 1) / 2)) {
@@ -679,59 +682,63 @@ function FlipBookSection() {
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
       {/* Book Container */}
-      <div className="relative w-[90vw] max-w-[700px] h-[50vh] lg:h-[55vh]">
-        <div className="relative w-full h-full flex">
-          {/* Left Page */}
-          <div className="w-1/2 h-full bg-white shadow-lg rounded-l-sm p-6 lg:p-8 border-r border-[#e0e0e0]">
-            <h3 className="font-script text-2xl text-[#111216] mb-6">
-              {pages[leftPageIndex]?.title}
-            </h3>
-            <ul className="space-y-3">
-              {pages[leftPageIndex]?.content.map((item, i) => (
-                <li key={i} className="flex items-center gap-3 text-[#6E6F74] text-sm">
-                  <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="absolute bottom-4 left-6 font-mono text-xs text-[#6E6F74]">
-              Page {leftPageIndex + 1}
-            </div>
-          </div>
-
-          {/* Right Page */}
-          <div className="w-1/2 h-full bg-white shadow-lg rounded-r-sm p-6 lg:p-8 relative">
-            {rightPageIndex < pages.length ? (
-              <>
-                <h3 className="font-script text-2xl text-[#111216] mb-6">
-                  {pages[rightPageIndex]?.title}
-                </h3>
-                <ul className="space-y-3">
-                  {pages[rightPageIndex]?.content.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-[#6E6F74] text-sm">
-                      <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </>
-            ) : (
-              <div className="h-full flex items-center justify-center">
-                <div className="text-center">
-                  <BookOpen className="w-14 h-14 text-[#D13B3B] mx-auto mb-4" />
-                  <p className="font-script text-xl text-[#6E6F74]">End of Contents</p>
-                </div>
-              </div>
-            )}
-            <div className="absolute bottom-4 right-6 font-mono text-xs text-[#6E6F74]">
-              Page {rightPageIndex + 1}
-            </div>
-          </div>
-
-          {/* Spine */}
-          <div className="absolute left-1/2 top-0 w-3 h-full -translate-x-1/2 bg-gradient-to-r from-[#d0d0d0] via-[#f0f0f0] to-[#d0d0d0] shadow-inner" />
-        </div>
+      <div className="relative w-[95vw] sm:w-[90vw] max-w-[700px] min-h-[60vh] sm:min-h-[50vh] lg:min-h-[55vh]">
+  <div className="relative w-full h-full flex">
+    {/* Left Page */}
+    <div className="w-1/2 min-h-full bg-white shadow-lg rounded-l-sm p-3 sm:p-4 lg:p-6 xl:p-8 border-r border-[#e0e0e0] flex flex-col">
+      <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
+        {pages[leftPageIndex]?.title}
+      </h3>
+      
+      <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
+        {pages[leftPageIndex]?.content.map((item, i) => (
+          <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
+            <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      
+      <div className="mt-auto pt-3 font-mono text-[10px] sm:text-xs text-[#6E6F74]">
+        Page {leftPageIndex + 1}
       </div>
+    </div>
+
+    {/* Right Page */}
+    <div className="w-1/2 min-h-full bg-white shadow-lg rounded-r-sm p-3 sm:p-4 lg:p-6 xl:p-8 relative flex flex-col">
+      {rightPageIndex < pages.length ? (
+        <>
+          <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
+            {pages[rightPageIndex]?.title}
+          </h3>
+          
+          <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
+            {pages[rightPageIndex]?.content.map((item, i) => (
+              <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
+                <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <div className="flex-1 flex items-center justify-center">
+          <div className="text-center">
+            <BookOpen className="w-10 h-10 sm:w-14 sm:h-14 text-[#D13B3B] mx-auto mb-4" />
+            <p className="font-script text-lg sm:text-xl text-[#6E6F74]">End of Contents</p>
+          </div>
+        </div>
+      )}
+      
+      <div className="mt-auto pt-3 text-right font-mono text-[10px] sm:text-xs text-[#6E6F74]">
+        Page {rightPageIndex + 1}
+      </div>
+    </div>
+
+    {/* Spine */}
+    <div className="absolute left-1/2 top-0 w-2 sm:w-3 h-full -translate-x-1/2 bg-gradient-to-r from-[#d0d0d0] via-[#f0f0f0] to-[#d0d0d0] shadow-inner" />
+  </div>
+</div>
 
       {/* Navigation Buttons */}
       <div className="flex items-center gap-6 mt-10">
@@ -854,7 +861,8 @@ function ContactSection() {
 
               <div className="flex flex-col lg:flex-row gap-8">
                 {/* Contact Form */}
-                <form onSubmit={handleSubmit} className="flex-1 space-y-4">
+               
+    <form onSubmit={handleSubmit} className="flex-1 space-y-4">
                   <div>
                     <label className="block font-mono text-xs uppercase tracking-wider text-[#6E6F74] mb-1">
                       Name
@@ -898,6 +906,7 @@ function ContactSection() {
                     {submitted ? 'Message Sent!' : <><Send className="w-4 h-4" /> Send Message</>}
                   </button>
                 </form>
+  
 
                 {/* Contact Info */}
                 <div className="lg:w-[180px] space-y-5">
@@ -933,7 +942,7 @@ function ContactSection() {
                       Social
                     </h4>
                     <div className="flex gap-3">
-                      <a href="#" className="text-[#111216] hover:text-[#D13B3B] transition-colors">
+                      <a href="https://linkedin.com/in/thomas-ashaolu-756a9764" className="text-[#111216] hover:text-[#D13B3B] transition-colors">
                         <Linkedin className="w-5 h-5" />
                       </a>
                       <a href="#" className="text-[#111216] hover:text-[#D13B3B] transition-colors">
