@@ -519,28 +519,37 @@ function JourneySection() {
           >
           <p> 
             More About Me —
-          </p>
+          </p> 
+          <div>
           <a 
             href="https://orcid.org/0000-0003-4906-4550"
             target="_blank"
             rel="noopener noreferrer"
+            className="mt-4 text-white/70 text-sm hover:text-white transition-colors underline"
            >
             ORCID
-          </a>
+          </a> 
+          </div>
+          <div>
           <a 
             href="https://www.researchgate.net/profile/Thomas-Ashaolu"
             target="_blank"
             rel="noopener noreferrer"
+             className="mt-4 text-white/70 text-sm hover:text-white transition-colors underline"
            >
             RESEARCHGATE
           </a>
+          </div>
+          <div>
           <a 
             href="https://scholar.google.com/citations?user=R-tyDckAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
+             className="mt-4 text-white/70 text-sm hover:text-white transition-colors underline"
            >
             GOOGLE SCHOLARS 
           </a>
+          </div>
         </div>
 
             </div>
