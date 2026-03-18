@@ -774,7 +774,7 @@ function ReviewsSection() {
   return (
     <section 
       id="reviews"
-      className="relative w-full min-h-screen py-20 overflow-hidden bg-[#0E0F12]"
+      className="relative w-full min-h-screen py-15 overflow-hidden bg-[#0E0F12]"
     >
       {/* Video Background - Desktop Only */}
       <div className="absolute inset-0 hidden lg:block">
@@ -851,7 +851,7 @@ function ReviewsSection() {
 
                 {/* Reviewer Info */}
                 <div className="border-t border-white/10 pt-4">
-                  <p className="font-script text-lg text-[#D13B3B]">
+                  <p className="font-Arial text-lg text-[#D13B3B]">
                     {review.name}
                   </p>
                   <p className="text-[#6E6F74] text-xs font-mono uppercase tracking-wider">
