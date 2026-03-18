@@ -46,6 +46,7 @@ function Preloader({ onComplete }: { onComplete: () => void }) {
 }
 
 // Custom Cursor Component
+// Custom Cursor Component - Pencil Style with Tip as Hotspot
 function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const [isHovering, setIsHovering] = useState(false);
@@ -57,17 +58,21 @@ function CustomCursor() {
     if (!cursor) return;
 
     const onMouseMove = (e: MouseEvent) => {
+      // Offset the cursor so the pencil TIP is at the mouse position
+      // The pencil points down-right, so we position the div above-left of the mouse
       gsap.to(cursor, {
-        x: e.clientX,
-        y: e.clientY,
-        duration: 0.08,
+        x: e.clientX - 5,  // Slight offset so tip is exact
+        y: e.clientY - 5,
+        duration: 0.05,
         ease: 'power2.out'
       });
     };
 
     window.addEventListener('mousemove', onMouseMove);
     
-    const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
+    // Select interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"], input, textarea, select, [data-cursor-hover]');
+    
     const onEnter = () => setIsHovering(true);
     const onLeave = () => setIsHovering(false);
     
@@ -91,11 +96,60 @@ function CustomCursor() {
     <div 
       ref={cursorRef}
       className={`custom-cursor ${isHovering ? 'hover' : ''}`}
-      style={{ left: 0, top: 0, position: 'fixed', pointerEvents: 'none', zIndex: 9999 }}
+      style={{ 
+        left: 0, 
+        top: 0, 
+        position: 'fixed', 
+        pointerEvents: 'none', 
+        zIndex: 9999,
+        // Offset the container so the pencil tip aligns with mouse
+        transform: 'translate(-2px, -2px)'
+      }}
     >
-      <svg viewBox="0 0 32 32" fill="none" width="32" height="32">
-        <path d="M8 4L8 24L12 20L16 28L20 26L16 18L22 18L8 4Z" fill="#D4A574" stroke="#8B6914" strokeWidth="1"/>
-        <circle cx="8" cy="4" r="2" fill="#D13B3B" />
+      <svg 
+        viewBox="0 0 40 120" 
+        width="24" 
+        height="72" 
+        style={{
+          // Rotate the pencil to point naturally (angled like writing position)
+          transform: 'rotate(-45deg)',
+          transformOrigin: 'top left',
+          filter: 'drop-shadow(2px 2px 3px rgba(0,0,0,0.3))'
+        }}
+      >
+        {/* Pencil Body (Wood) */}
+        <rect 
+          x="14" 
+          y="20" 
+          width="12" 
+          height="80" 
+          fill="#D4A574" 
+          stroke="#8B6914" 
+          strokeWidth="1"
+        />
+        
+        {/* Pencil Body Detail - Wood texture lines */}
+        <line x1="20" y1="20" x2="20" y2="100" stroke="#B8956A" strokeWidth="1" />
+        
+        {/* Metal Ferrule (if you want an eraser version, remove this and add eraser) */}
+        <rect x="13" y="10" width="14" height="10" fill="#C0C0C0" stroke="#999" strokeWidth="1" />
+        
+        {/* Pencil Tip (Wood cone) */}
+        <path 
+          d="M14 10 L20 0 L26 10 Z" 
+          fill="#E8D4C4" 
+          stroke="#D4A574" 
+          strokeWidth="1"
+        />
+        
+        {/* Lead Point (The actual click point/hotspot) */}
+        <path 
+          d="M18 3 L20 0 L22 3 L20 4 Z" 
+          fill="#2C2C2C" 
+        />
+        
+        {/* Highlight on pencil */}
+        <rect x="15" y="22" width="2" height="76" fill="rgba(255,255,255,0.3)" />
       </svg>
     </div>
   );
