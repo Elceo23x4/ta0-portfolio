@@ -515,7 +515,7 @@ function JourneySection() {
             </div>
             </div>
 
-          <div  className="inline-flex items-center gap-2 px-8 py-3 bg-[#fff] text-black rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
+          <div  className="inline-flex items-center gap-2 px-8 py-3 bg-[#fff] text-black rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#fff] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
           >
           <p> 
             More About Me —
@@ -958,12 +958,8 @@ function BookstoreSection() {
         >
           Amazon Kindle
         </a>
-        <a 
-          href="#"
-          className="mt-4 text-white/70 text-sm hover:text-white transition-colors underline"
-        >
-          Download sample chapter (PDF)
-        </a>
+        
+         
       </div>
 
       <div className="absolute top-[15%] left-[15%] opacity-20">
