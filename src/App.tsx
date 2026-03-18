@@ -516,14 +516,31 @@ function JourneySection() {
             </div>
             </div>
              {/* Bottom CTA */}
-        <div className="text-center mt-16">
+        <div  className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
+          >
+          <p> 
+            More About Me <ArrowRight className="w-4 h-4" />
+          </p>
           <a 
             href="https://orcid.org/0000-0003-4906-4550"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
-          >
-            More About Me <ArrowRight className="w-4 h-4" />
+           >
+            ORCID
+          </a>
+          <a 
+            href="https://www.researchgate.net/profile/Thomas-Ashaolu"
+            target="_blank"
+            rel="noopener noreferrer"
+           >
+            RESEARCHGATE
+          </a>
+          <a 
+            href="https://scholar.google.com/citations?user=R-tyDckAAAAJ&hl=en"
+            target="_blank"
+            rel="noopener noreferrer"
+           >
+            GOOGLE SCHOLARS 
           </a>
         </div>
         
