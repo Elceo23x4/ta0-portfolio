@@ -298,9 +298,9 @@ function HeroSection() {
         <span className="word inline-block">task,</span>{' '}
         <span className="word inline-block">it&apos;s</span>{' '}
         <span className="word inline-block">a</span>{' '}
-        <span className="word inline-block text-[#D13B3B]">product</span>
+        <span className="word inline-block text-[#D13B3B]">product</span>{' '}
         <span className="word inline-block">of</span>{' '}
-        <span className="word inline-block">acquired</span>
+        <span className="word inline-block">acquired</span>{' '}
         <span className="word inline-block">expertise</span>{' '}
       </h1>
 
@@ -585,7 +585,7 @@ function JourneySection() {
            >
             ORCID
           </a> 
-          </div>
+          </div> {' '}
         <div className="relative z-10 mt-4">
           <a 
             href="https://www.researchgate.net/profile/Thomas-Ashaolu"
@@ -595,7 +595,7 @@ function JourneySection() {
            >
             RESEARCHGATE
           </a>
-          </div>
+          </div> {' '}
           <div className="relative z-10 mt-4">
           <a 
             href="https://scholar.google.com/citations?user=R-tyDckAAAAJ&hl=en"
