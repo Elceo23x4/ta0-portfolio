@@ -944,6 +944,7 @@ function BookstoreSection() {
       className="relative w-full min-h-screen paper-texture flex items-center justify-center py-20"
     >
       <div className="bookstore-circle w-[70vw] h-[70vw] max-w-[450px] max-h-[450px] bg-[#D13B3B] rounded-full flex flex-col items-center justify-center text-center p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
+       <div></div>
         <h2 className="text-4xl lg:text-5xl font-script text-white mb-4">
           Get my latest book
         </h2>
@@ -958,7 +959,7 @@ function BookstoreSection() {
         >
           Amazon Kindle
         </a>
-        
+        <div></div>
          
       </div>
 
