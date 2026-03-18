@@ -520,32 +520,32 @@ function JourneySection() {
           <p> 
             More About Me —
           </p> 
-          <div>
+          <div className="relative z-10 mt-4">
           <a 
             href="https://orcid.org/0000-0003-4906-4550"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 text-black text-sm hover:text-black transition-colors underline"
+            className="text-black text-sm hover:text-black transition-colors underline underline-offset-2"
            >
             ORCID
           </a> 
           </div>
-          <div>
+        <div className="relative z-10 mt-4">
           <a 
             href="https://www.researchgate.net/profile/Thomas-Ashaolu"
             target="_blank"
             rel="noopener noreferrer"
-             className="mt-4 text-black text-sm hover:text-black transition-colors underline"
+             className="text-black text-sm hover:text-black transition-colors underline underline-offset-2"
            >
             RESEARCHGATE
           </a>
           </div>
-          <div>
+          <div className="relative z-10 mt-4">
           <a 
             href="https://scholar.google.com/citations?user=R-tyDckAAAAJ&hl=en"
             target="_blank"
             rel="noopener noreferrer"
-             className="mt-4 text-black text-sm hover:text-black transition-colors underline"
+             className="text-black text-sm hover:text-black transition-colors underline underline-offset-2"
            >
             GOOGLE SCHOLARS 
           </a>
