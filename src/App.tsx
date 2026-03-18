@@ -244,8 +244,10 @@ function HeroSection() {
         <span className="word inline-block">task,</span>{' '}
         <span className="word inline-block">it&apos;s</span>{' '}
         <span className="word inline-block">a</span>{' '}
-        <span className="word inline-block text-[#D13B3B]">product of</span>
-        <span className="word inline-block">acquired expertise</span>
+        <span className="word inline-block text-[#D13B3B]">product</span>
+        <span className="word inline-block">of</span>{' '}
+        <span className="word inline-block">acquired</span>
+        <span className="word inline-block">expertise</span>{' '}
       </h1>
 
       <p className="text-sm font-mono text-[#6E6F74] uppercase tracking-wider mb-12">
@@ -420,7 +422,7 @@ function AchievementsSection() {
         href="#journey" 
         className="mt-10 text-[#D13B3B] font-mono text-sm uppercase tracking-wider flex items-center gap-2 hover:underline"
       >
-        Read the story <ArrowRight className="w-4 h-4" />
+        Get to know more about me <ArrowRight className="w-4 h-4" />
       </a>
     </section>
   );
@@ -547,7 +549,7 @@ function JourneySection() {
             rel="noopener noreferrer"
              className="text-black text-sm hover:text-black transition-colors underline underline-offset-2"
            >
-            GOOGLE SCHOLARS 
+            GOOGLE-SCHOLARS 
           </a>
           </div>
         </div>
