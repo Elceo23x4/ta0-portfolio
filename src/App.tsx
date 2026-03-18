@@ -513,6 +513,8 @@ function JourneySection() {
               </p>
               <p className="font-script text-2xl text-[#D13B3B]">— T.A. Ashaolu</p>
             </div>
+            </div>
+            </div>
              {/* Bottom CTA */}
         <div className="text-center mt-16">
           <a 
@@ -524,8 +526,7 @@ function JourneySection() {
             More About Me <ArrowRight className="w-4 h-4" />
           </a>
         </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
@@ -774,7 +775,7 @@ function ReviewsSection() {
   return (
     <section 
       id="reviews"
-      className="relative w-full min-h-screen py-15 overflow-hidden bg-[#0E0F12]"
+      className="relative w-full min-h-screen py-20 overflow-hidden bg-[#0E0F12]"
     >
       {/* Video Background - Desktop Only */}
       <div className="absolute inset-0 hidden lg:block">
@@ -915,18 +916,18 @@ function BookstoreSection() {
     >
       <div className="bookstore-circle w-[70vw] h-[70vw] max-w-[450px] max-h-[450px] bg-[#D13B3B] rounded-full flex flex-col items-center justify-center text-center p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
         <h2 className="text-4xl lg:text-5xl font-script text-white mb-4">
-          Get the latest book
+          Get my latest book
         </h2>
         <p className="text-white/90 text-sm lg:text-base max-w-[260px] mb-8">
           Valuation of Tangible and Intangible Assets
         </p>
         <a 
-          href="https://selar.co/bookstore"
+          href="https://a.co/d/015cpGWf"
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-3 bg-white text-[#D13B3B] rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:shadow-lg"
         >
-          Visit Bookstore
+          Amazon Kindle
         </a>
         <a 
           href="#"
