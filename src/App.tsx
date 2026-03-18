@@ -508,11 +508,22 @@ function JourneySection() {
                 I have had many remarkable field experiences in property and assets (tangible and intangible) valuation. On academic front, I started as a lecturer at Obafemi Awolowo University, Ile-Ife and also was a former Head of Department of Estate management and Valuation, in Federal Polytechnic, Ilaro. 
               </p>
               <p className="text-lg text-[#111216] leading-relaxed mb-8">
-                My books on Valuation were written out of my daring passion of knowledge sharing. They combine 
+                My books on Valuation were written out of my daring passion for knowledge sharing. They combine 
                 technical precision with practical experience and wisdom gained from years of hands-on experience.
               </p>
               <p className="font-script text-2xl text-[#D13B3B]">— T.A. Ashaolu</p>
             </div>
+             {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <a 
+            href="https://orcid.org/0000-0003-4906-4550"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
+          >
+            More About Me <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
           </div>
         </div>
       </div>
@@ -799,7 +810,7 @@ function ReviewsSection() {
       <div className="relative z-10 container mx-auto px-4">
         {/* Section Title */}
         <h2 className="text-section font-script text-center text-white mb-4">
-          What Readers Say
+          Book Reviews
         </h2>
         <p className="text-center text-[#6E6F74] font-mono text-sm uppercase tracking-wider mb-16">
           Testimonials from professionals across the field
@@ -862,17 +873,7 @@ function ReviewsSection() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <a 
-            href="https://selar.co/bookstore"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
-          >
-            Get the Book <ArrowRight className="w-4 h-4" />
-          </a>
-        </div>
+       
       </div>
 
       {/* Floating decorative elements */}
