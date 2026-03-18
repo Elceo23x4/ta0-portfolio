@@ -486,7 +486,7 @@ function AchievementsSection() {
       </div>
 
       <a 
-        href="#journey" 
+        href="https://orcid.org/0000-0003-4906-4550" 
         className="mt-10 text-[#D13B3B] font-mono text-sm uppercase tracking-wider flex items-center gap-2 hover:underline"
       >
         Get to know more about me <ArrowRight className="w-4 h-4" />
