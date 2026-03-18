@@ -237,7 +237,52 @@ textarea:focus {
     background-image: none;
   }
   
-  .text-[#6E6F74] {
-    color: #333;
+  /* Replace Tailwind bracket notation with standard CSS */
+  /* Target the class by escaping or using attribute selector */
+  [class*="text-\\[\\#6E6F74\\]"] {
+    color: #333 !important;
   }
+  
+  /* Or better: add a specific class in your component for high contrast */
+  .text-secondary {
+    color: #333 !important;
+  }
+}
+
+/* Reviews Section Styles */
+#reviews {
+  position: relative;
+}
+
+/* Parallelogram hover effect enhancement */
+#reviews .group:hover {
+  z-index: 10;
+}
+
+/* Video optimization */
+#reviews video {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #reviews .grid > div {
+    transform: skewX(-4deg) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  #reviews .grid > div {
+    transform: skewX(-2deg) !important;
+  }
+  
+  #reviews h2 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Smooth scroll margin for anchor link */
+#reviews {
+  scroll-margin-top: 80px;
 }

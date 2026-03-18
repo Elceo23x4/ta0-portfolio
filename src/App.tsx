@@ -249,7 +249,7 @@ function HeroSection() {
       </h1>
 
       <p className="text-sm font-mono text-[#6E6F74] uppercase tracking-wider mb-12">
-        Assets and Property valuation Services • Mentoring and Trainings • Real Estate Surveys
+        Assets and Property valuation Services • Mentoring and Trainings 
       </p>
 
       <div className="w-full overflow-hidden py-6 bg-white/80 shadow-md -rotate-1">
@@ -381,7 +381,7 @@ function AchievementsSection() {
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
       <h2 className="text-section font-script text-[#111216] mb-12">
-        Achievements
+        Highlights
       </h2>
 
       <div 
@@ -528,17 +528,17 @@ function BooksSection() {
   const books = [
     {
       title:  'Valuation of Tangible and Intangible Assets',
-      description: 'A comprehensive guide to property valuation techniques, covering residential and commercial assessments with real-world case studies.',
+      description: 'A daring compedium and trailblazing effort embracing modalities for valuing all categories of assets. It familiarises the valuer with both basic valuation tools and a clear understanding of each of the underlying subjects of valuation',
       image: '/images/book-cover-1.jpg'
     },
     {
       title: 'Property Valuation | Theory and Practice',
-      description: 'Essential checklists and procedures for land surveyors, ensuring accuracy and compliance in every project.',
+      description: 'Simplified property valuation mathematics and methodologies covering all regular undergraduate and some graduate curricula.',
       image: '/images/book-cover-2.jpg'
     },
     {
       title: 'Valuation of Non-Landed Property Assets ',
-      description: 'Mathematical concepts made accessible for construction professionals, from basic calculations to advanced formulas.',
+      description: 'First of its kind textbook on knowledge sets and procedures for ascertaining the worth of non-real estate assets.',
       image: '/images/book-cover-3.jpg'
     }
   ];
@@ -735,6 +735,157 @@ function FlipBookSection() {
   );
 }
 
+
+
+// Reviews Section
+function ReviewsSection() {
+  const reviews = [
+    {
+      text: "Our backlist includes numerous real estate valuation books but not something this broad.",
+      name: "Ed Needle, Taylor & Francis Group",
+      location: "Oxfordshire, United Kingdom",
+      role: "Publishers"
+    },
+    {
+      text: "The book is novel in coverage and depth, penetrating areas that had not been captured by previous authors in property valuation.",
+      name: "Prof. O.M. Bello",
+      location: "Akure, Nigeria",
+      role: "Academic"
+    },
+    {
+      text: "The book is both holistic and forward-looking. The author did an excellent job of explaining difficult concepts concisely, clearly and accurately.",
+      name: "Prof. G.K. Babawale",
+      location: "Lagos,   Nigeria",
+      role: "Academic"
+    }
+  ];
+
+  return (
+    <section 
+      id="reviews"
+      className="relative w-full min-h-screen py-20 overflow-hidden bg-[#0E0F12]"
+    >
+      {/* Video Background - Desktop Only */}
+      <div className="absolute inset-0 hidden lg:block">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover opacity-20"
+          poster="/images/reviews-poster.jpg"
+        >
+          <source src="/videos/thumbs-up-book.mp4" type="video/mp4" />
+          {/* Fallback for browsers that don't support mp4 */}
+          <source src="/videos/thumbs-up-book.webm" type="video/webm" />
+        </video>
+        {/* Dark overlay for text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0E0F12]/80 via-[#0E0F12]/60 to-[#0E0F12]/80" />
+      </div>
+
+      {/* Mobile Fallback Background */}
+      <div 
+        className="absolute inset-0 lg:hidden"
+        style={{
+          backgroundImage: 'url(/images/paper-texture.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          opacity: 0.1
+        }}
+      />
+      <div className="absolute inset-0 lg:hidden bg-[#0E0F12]/95" />
+
+      {/* Content */}
+      <div className="relative z-10 container mx-auto px-4">
+        {/* Section Title */}
+        <h2 className="text-section font-script text-center text-white mb-4">
+          What Readers Say
+        </h2>
+        <p className="text-center text-[#6E6F74] font-mono text-sm uppercase tracking-wider mb-16">
+          Testimonials from professionals across the field
+        </p>
+
+        {/* Reviews Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-[1200px] mx-auto">
+          {reviews.map((review, index) => (
+            <div
+              key={index}
+              className="group relative"
+              style={{
+                transform: 'skewX(-8deg)',
+              }}
+            >
+              {/* Parallelogram Tile */}
+              <div 
+                className="relative bg-white/5 backdrop-blur-sm border border-white/10 p-6 lg:p-8 h-full transition-all duration-300 hover:bg-white/10 hover:border-[#D13B3B]/30 hover:shadow-[0_8px_32px_rgba(209,59,59,0.15)] hover:-translate-y-2"
+                style={{
+                  transform: 'skewX(0deg)', // Counter-skew content
+                }}
+              >
+                {/* Quote Icon */}
+                <div className="absolute -top-3 -left-2 w-8 h-8 bg-[#D13B3B] rounded-full flex items-center justify-center shadow-lg">
+                  <svg 
+                    className="w-4 h-4 text-white" 
+                    fill="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                  </svg>
+                </div>
+
+                {/* Review Text */}
+                <p className="text-[#e0e0e0] text-sm lg:text-base leading-relaxed mb-6 mt-2 italic">
+                  "{review.text}"
+                </p>
+
+                {/* Reviewer Info */}
+                <div className="border-t border-white/10 pt-4">
+                  <p className="font-script text-lg text-[#D13B3B]">
+                    {review.name}
+                  </p>
+                  <p className="text-[#6E6F74] text-xs font-mono uppercase tracking-wider">
+                    {review.role}
+                  </p>
+                  <p className="text-[#6E6F74]/70 text-xs mt-1 flex items-center gap-1">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    {review.location}
+                  </p>
+                </div>
+
+                {/* Decorative corner */}
+                <div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tl from-[#D13B3B]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-16">
+          <a 
+            href="https://selar.co/bookstore"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
+          >
+            Get the Book <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+
+      {/* Floating decorative elements */}
+      <div className="absolute top-20 left-10 w-20 h-20 border border-[#D13B3B]/20 rotate-45 hidden lg:block" />
+      <div className="absolute bottom-20 right-10 w-16 h-16 border border-[#D13B3B]/20 rotate-12 hidden lg:block" />
+    </section>
+  );
+}
+
+
+
+
+
 // Bookstore CTA Section
 function BookstoreSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -806,7 +957,7 @@ function ContactSection() {
     const phoneNumber = '2348023220961';
     
     // Format the message
-    const text = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Message:* ${encodeURIComponent(formData.message)}`;
+    const text = `*New Message From TAA Web*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Message:* ${encodeURIComponent(formData.message)}`;
     
     // Create WhatsApp URL
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
@@ -995,6 +1146,7 @@ function App() {
         <JourneySection />
         <BooksSection />
         <FlipBookSection />
+        <ReviewsSection />
         <BookstoreSection />
         <ContactSection />
         <FooterSection />
