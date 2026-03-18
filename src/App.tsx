@@ -803,7 +803,7 @@ function ContactSection() {
     e.preventDefault();
     
     
-    const phoneNumber = '2349115716254';
+    const phoneNumber = '2348023220961';
     
     // Format the message
     const text = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Message:* ${encodeURIComponent(formData.message)}`;
