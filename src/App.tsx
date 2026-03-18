@@ -514,12 +514,11 @@ function JourneySection() {
               <p className="font-script text-2xl text-[#D13B3B]">— T.A. Ashaolu</p>
             </div>
             </div>
-            </div>
-             {/* Bottom CTA */}
-        <div  className="inline-flex items-center gap-2 px-8 py-3 bg-[#D13B3B] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
+
+          <div  className="inline-flex items-center gap-2 px-8 py-3 bg-[#fff] text-white rounded-full font-mono text-sm uppercase tracking-wider transition-all hover:bg-[#b53232] hover:shadow-[0_4px_20px_rgba(209,59,59,0.4)]"
           >
           <p> 
-            More About Me <ArrowRight className="w-4 h-4" />
+            More About Me —
           </p>
           <a 
             href="https://orcid.org/0000-0003-4906-4550"
@@ -543,6 +542,10 @@ function JourneySection() {
             GOOGLE SCHOLARS 
           </a>
         </div>
+
+            </div>
+             {/* Bottom CTA */}
+        
         
       </div>
     </section>
