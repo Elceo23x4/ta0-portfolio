@@ -179,7 +179,7 @@ function BackToTop() {
 // Floating Bookstore Icon
 function BookstoreIcon() {
   const handleClick = () => {
-    window.open('https://selar.co/bookstore', '_blank');
+    window.open('https://a.co/d/015cpGWf', '_blank');
   };
 
   return (
@@ -202,30 +202,27 @@ function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
 
-useEffect(() => {
-  const ctx = gsap.context(() => {
-    const words = headlineRef.current?.querySelectorAll('.word');
-    
-    // Only animate if words exist
-    if (words && words.length > 0) {
-      // Set initial visible state first
-      gsap.set(words, { opacity: 1, y: 0, rotation: 0 });
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const words = headlineRef.current?.querySelectorAll('.word');
       
-      // Then animate from hidden
-      gsap.from(words, {
-        opacity: 0,
-        y: 30,
-        rotation: -3,
-        duration: 0.6,
-        stagger: 0.08,
-        ease: 'power2.out',
-        delay: 0.5
-      });
-    }
-  }, sectionRef);
+      if (words && words.length > 0) {
+        gsap.set(words, { opacity: 1, y: 0, rotation: 0 });
+        
+        gsap.from(words, {
+          opacity: 0,
+          y: 30,
+          rotation: -3,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: 'power2.out',
+          delay: 0.5
+        });
+      }
+    }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+    return () => ctx.revert();
+  }, []);
 
   const bookTitles = [
     'Property Valuation | Theory and Practice',
@@ -238,8 +235,6 @@ useEffect(() => {
       ref={sectionRef}
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-10"
     >
-      {/* Headline */}
-      
       <h1 
         ref={headlineRef} className="text-hero font-mono text-center px-4 z-10 mb-8">
         <span className="word inline-block">Valuation</span>{' '}
@@ -253,12 +248,10 @@ useEffect(() => {
         <span className="word inline-block">acquired expertise</span>
       </h1>
 
-      {/* Micro line */}
       <p className="text-sm font-mono text-[#6E6F74] uppercase tracking-wider mb-12">
         Assets and Property valuation Services • Mentoring and Trainings • Real Estate Surveys
       </p>
 
-      {/* Marquee Strip */}
       <div className="w-full overflow-hidden py-6 bg-white/80 shadow-md -rotate-1">
         <div className="marquee-track flex items-center gap-8 whitespace-nowrap">
           {[...bookTitles, ...bookTitles, ...bookTitles].map((title, i) => (
@@ -270,7 +263,6 @@ useEffect(() => {
         </div>
       </div>
 
-      {/* Stamp Mark */}
       <div className="absolute top-[15vh] right-[12vw] w-[100px] h-[100px] stamp flex items-center justify-center">
         <div className="text-[#D13B3B] font-script text-3xl font-bold rotate-[-5deg]">
           TAA
@@ -280,14 +272,13 @@ useEffect(() => {
   );
 }
 
-// Paper Plane Transition Section (simplified, no shapes)
+// Paper Plane Transition Section
 function PaperPlaneSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const planeRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Plane flies in from left
       gsap.from(planeRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -300,7 +291,6 @@ function PaperPlaneSection() {
         scale: 0.7
       });
 
-      // Plane flies out to right
       gsap.to(planeRef.current, {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -322,16 +312,12 @@ function PaperPlaneSection() {
       ref={sectionRef}
       className="relative w-full h-[20vh] bg-white overflow-hidden flex items-center justify-center"
     >
-      {/* Paper Plane */}
       <img 
         ref={planeRef}
         src="/images/paper-plane.png" 
         alt="Paper Plane"
         className="relative z-10 w-[25vw] max-w-[300px] h-auto"
       />
-
-      {/* Caption */}
-      
     </section>
   );
 }
@@ -342,46 +328,42 @@ function AchievementsSection() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-  const ctx = gsap.context(() => {
-    // Safely get refs
-    const scrollElement = scrollRef.current;
-    const sectionElement = sectionRef.current;
-    
-    // Only run animations if elements exist
-    if (!scrollElement || !sectionElement) return;
+    const ctx = gsap.context(() => {
+      const scrollElement = scrollRef.current;
+      const sectionElement = sectionRef.current;
+      
+      if (!scrollElement || !sectionElement) return;
 
-    // Animate scroll indicator
-    gsap.from(scrollElement, {
-      scrollTrigger: {
-        trigger: sectionElement,
-        start: 'top 80%',
-        end: 'top 30%',
-        scrub: 1
-      },
-      scaleX: 0.1,
-      opacity: 0
-    });
-
-    // Animate achievement items
-    const achievementItems = sectionElement.querySelectorAll('.achievement-item');
-    
-    if (achievementItems.length > 0) {
-      gsap.from(achievementItems, {
+      gsap.from(scrollElement, {
         scrollTrigger: {
           trigger: sectionElement,
-          start: 'top 60%',
-          end: 'top 20%',
+          start: 'top 80%',
+          end: 'top 30%',
           scrub: 1
         },
-        x: -30,
-        opacity: 0,
-        stagger: 0.1
+        scaleX: 0.1,
+        opacity: 0
       });
-    }
-  }, sectionRef);
 
-  return () => ctx.revert();
-}, []);
+      const achievementItems = sectionElement.querySelectorAll('.achievement-item');
+      
+      if (achievementItems.length > 0) {
+        gsap.from(achievementItems, {
+          scrollTrigger: {
+            trigger: sectionElement,
+            start: 'top 60%',
+            end: 'top 20%',
+            scrub: 1
+          },
+          x: -30,
+          opacity: 0,
+          stagger: 0.1
+        });
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   const achievements = [
     'First Class and top-notch degrees in Valuation up to PhD',
@@ -398,21 +380,17 @@ function AchievementsSection() {
       ref={sectionRef}
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
-      {/* Title */}
       <h2 className="text-section font-script text-[#111216] mb-12">
         Achievements
       </h2>
 
-      {/* Scroll Container */}
       <div 
         ref={scrollRef}
         className="relative w-[90vw] max-w-[900px]"
         style={{ transformOrigin: 'center' }}
       >
-        {/* Left Roller */}
         <div className="absolute left-[-20px] top-1/2 -translate-y-1/2 w-[20px] h-[300px] bg-gradient-to-r from-amber-700 to-amber-600 rounded-full shadow-lg z-10" />
         
-        {/* Scroll Content */}
         <div 
           className="w-full rounded-lg overflow-hidden shadow-2xl p-8 lg:p-12"
           style={{
@@ -431,16 +409,13 @@ function AchievementsSection() {
           </ul>
         </div>
         
-        {/* Right Roller */}
         <div className="absolute right-[-20px] top-1/2 -translate-y-1/2 w-[20px] h-[300px] bg-gradient-to-l from-amber-700 to-amber-600 rounded-full shadow-lg z-10" />
       </div>
 
-      {/* Stamp */}
       <div className="absolute top-[15vh] right-[15vw] stamp w-[70px] h-[70px] flex items-center justify-center">
         <span className="text-[#D13B3B] font-script text-lg font-bold rotate-[-8deg]">TAA</span>
       </div>
 
-      {/* CTA */}
       <a 
         href="#journey" 
         className="mt-10 text-[#D13B3B] font-mono text-sm uppercase tracking-wider flex items-center gap-2 hover:underline"
@@ -491,14 +466,12 @@ function JourneySection() {
       className="relative w-full min-h-screen paper-texture py-20"
     >
       <div className="container mx-auto px-4">
-        {/* Plan Paper */}
         <div 
           className="relative mx-auto max-w-[1000px] bg-white shadow-xl rounded-sm p-8 lg:p-12"
           style={{ 
             transform: 'rotate(-1deg)',
           }}
         >
-          {/* Blueprint background */}
           <div 
             className="absolute inset-0 opacity-10 rounded-sm"
             style={{
@@ -508,11 +481,9 @@ function JourneySection() {
             }}
           />
 
-          {/* Title */}
           <h2 className="text-section font-script text-[#111216] mb-8 relative z-10">The Journey</h2>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative z-10">
-            {/* Portrait */}
             <div 
               className="journey-image relative flex-shrink-0 mx-auto lg:mx-0"
               onMouseEnter={() => setShowQuote(true)}
@@ -526,18 +497,16 @@ function JourneySection() {
                 />
               </div>
               
-              {/* Quote overlay */}
               <div className={`absolute -bottom-2 -right-2 bg-white p-3 rounded-lg shadow-lg max-w-[180px] transition-all duration-300 ${showQuote ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
                 <p className="font-script text-lg text-[#111216]">&ldquo;Every property tells a story.&rdquo;</p>
               </div>
             </div>
 
-            {/* Text Content */}
             <div className="journey-content flex-1">
               <p className="text-lg text-[#111216] leading-relaxed mb-6">
                 I started practising as a trainee with foremost Nigerian estate valuation firm - Harriman and Company - in 1986, I became a professional Estate Surveyor and Valuer in 1989.
                 I have had many remarkable field experiences in property and assets (tangible and intangible) valuation. On academic front, I started as a lecturer at Obafemi Awolowo University, Ile-Ife and also was a former Head of Department of Estate management and Valuation, in Federal Polytechnic, Ilaro. 
-                              </p>
+              </p>
               <p className="text-lg text-[#111216] leading-relaxed mb-8">
                 My books on Valuation were written out of my daring passion of knowledge sharing. They combine 
                 technical precision with practical experience and wisdom gained from years of hands-on experience.
@@ -551,11 +520,10 @@ function JourneySection() {
   );
 }
 
-// Books Section - FIXED: Books visible by default
+// Books Section
 function BooksSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [hoveredBook, setHoveredBook] = useState<number | null>(null);
-
 
   const books = [
     {
@@ -577,7 +545,6 @@ function BooksSection() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Books start visible, animate in from below
       gsap.from('.book-item', {
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -601,12 +568,10 @@ function BooksSection() {
       className="relative w-full min-h-screen paper-texture py-20"
     >
       <div className="container mx-auto px-4">
-        {/* Title */}
         <h2 className="text-section font-script text-center text-[#111216] mb-16">
           My Books
         </h2>
 
-        {/* Books Grid - Always visible */}
         <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12">
           {books.map((book, i) => (
             <div
@@ -629,12 +594,10 @@ function BooksSection() {
                 />
               </div>
               
-              {/* Book Title below */}
               <p className="text-center font-script text-lg text-[#111216] mt-4">
                 {book.title}
               </p>
               
-              {/* Description popup on hover */}
               <div 
                 className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[260px] bg-white p-4 rounded-lg shadow-xl transition-all duration-300 z-20 ${
                   hoveredBook === i ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
@@ -646,7 +609,6 @@ function BooksSection() {
           ))}
         </div>
 
-        {/* CTA */}
         <div className="text-center mt-20">
           <a 
             href="#flipbook"
@@ -657,7 +619,6 @@ function BooksSection() {
         </div>
       </div>
 
-      {/* Stamp */}
       <div className="absolute top-[15vh] right-[10vw] stamp w-[70px] h-[70px] flex items-center justify-center">
         <span className="text-[#D13B3B] font-script text-lg font-bold rotate-[5deg]">TAA</span>
       </div>
@@ -670,16 +631,14 @@ function FlipBookSection() {
   const [currentPage, setCurrentPage] = useState(0);
 
   const pages = [
-  { title: 'Table of Contents', content: ['Introduction', 'Valuation of Tangible Assets', 'Intangible Assets', 'Valuation of Business', 'Concluding Remarks'] },
+    { title: 'Table of Contents', content: ['Introduction', 'Valuation of Tangible Assets', 'Intangible Assets', 'Valuation of Business', 'Concluding Remarks'] },
     { title: '1. Introduction', content: ['General Introduction', 'Background to Asset Valuation- The Nigerian Example'] },
     { title: '2. Valuation of Tangible Assets', content: ['Valuation of Furniture, Fixtures and Fittings', 'Valuation of Plant and Machinery I: Knowledge of Contents', 'Valuation of Plant and Machinery II: Procedures', 'Valuation of Vehicles', 'Valuation of Infrastructure Assets'] },
     { title: '3. Valuation of Tangible Assets', content: ['Valuation of Mineral Assets', 'Valuation of Real Estate', 'Valuation of Environmental Sustainability and ESG Factor', 'Valuation of Jewelry, Antique Etc', 'Valuation of Construction Works', 'Valuation of Rural/Agricultural Products'] },
     { title: '4. Intangible Assets', content: ['Valuation of Intagible Assets I: Goodwill', 'Valuation of Intagible II: Forms of Intellectual Property', 'Valuation of Intagible III: Intellectual Property', 'Valuation of Intellectual Capital', 'Valuation of Digital Assets'] },
     { title: '5. Valuation of Business', content: ['Valuation of Business', 'Valuation of Shares'] },
- { title: '6. Concluding Remarks', content: ['Market Survey', 'Depreciation', 'Issues Surrounding Asset Valuation'] }
+    { title: '6. Concluding Remarks', content: ['Market Survey', 'Depreciation', 'Issues Surrounding Asset Valuation'] }
   ];        
-
-
 
   const nextPage = () => {
     if (currentPage < Math.floor((pages.length - 1) / 2)) {
@@ -701,66 +660,61 @@ function FlipBookSection() {
       id="flipbook"
       className="relative w-full min-h-screen paper-texture flex flex-col items-center justify-center py-20"
     >
-      {/* Book Container */}
       <div className="relative w-[95vw] sm:w-[90vw] max-w-[700px] min-h-[60vh] sm:min-h-[50vh] lg:min-h-[55vh]">
-  <div className="relative w-full h-full flex">
-    {/* Left Page */}
-    <div className="w-1/2 min-h-full bg-white shadow-lg rounded-l-sm p-3 sm:p-4 lg:p-6 xl:p-8 border-r border-[#e0e0e0] flex flex-col">
-      <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
-        {pages[leftPageIndex]?.title}
-      </h3>
-      
-      <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
-        {pages[leftPageIndex]?.content.map((item, i) => (
-          <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
-            <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      
-      <div className="mt-auto pt-3 font-mono text-[10px] sm:text-xs text-[#6E6F74]">
-        Page {leftPageIndex + 1}
-      </div>
-    </div>
-
-    {/* Right Page */}
-    <div className="w-1/2 min-h-full bg-white shadow-lg rounded-r-sm p-3 sm:p-4 lg:p-6 xl:p-8 relative flex flex-col">
-      {rightPageIndex < pages.length ? (
-        <>
-          <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
-            {pages[rightPageIndex]?.title}
-          </h3>
-          
-          <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
-            {pages[rightPageIndex]?.content.map((item, i) => (
-              <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
-                <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </>
-      ) : (
-        <div className="flex-1 flex items-center justify-center">
-          <div className="text-center">
-            <BookOpen className="w-10 h-10 sm:w-14 sm:h-14 text-[#D13B3B] mx-auto mb-4" />
-            <p className="font-script text-lg sm:text-xl text-[#6E6F74]">End of Contents</p>
+        <div className="relative w-full h-full flex">
+          <div className="w-1/2 min-h-full bg-white shadow-lg rounded-l-sm p-3 sm:p-4 lg:p-6 xl:p-8 border-r border-[#e0e0e0] flex flex-col">
+            <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
+              {pages[leftPageIndex]?.title}
+            </h3>
+            
+            <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
+              {pages[leftPageIndex]?.content.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
+                  <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            
+            <div className="mt-auto pt-3 font-mono text-[10px] sm:text-xs text-[#6E6F74]">
+              Page {leftPageIndex + 1}
+            </div>
           </div>
+
+          <div className="w-1/2 min-h-full bg-white shadow-lg rounded-r-sm p-3 sm:p-4 lg:p-6 xl:p-8 relative flex flex-col">
+            {rightPageIndex < pages.length ? (
+              <>
+                <h3 className="font-script text-lg sm:text-xl lg:text-2xl text-[#111216] mb-3 sm:mb-4 lg:mb-6 break-words">
+                  {pages[rightPageIndex]?.title}
+                </h3>
+                
+                <ul className="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
+                  {pages[rightPageIndex]?.content.map((item, i) => (
+                    <li key={i} className="flex items-start gap-2 sm:gap-3 text-[#6E6F74] text-xs sm:text-sm break-words">
+                      <span className="w-1.5 h-1.5 bg-[#D13B3B] rounded-full flex-shrink-0 mt-1.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <div className="flex-1 flex items-center justify-center">
+                <div className="text-center">
+                  <BookOpen className="w-10 h-10 sm:w-14 sm:h-14 text-[#D13B3B] mx-auto mb-4" />
+                  <p className="font-script text-lg sm:text-xl text-[#6E6F74]">End of Contents</p>
+                </div>
+              </div>
+            )}
+            
+            <div className="mt-auto pt-3 text-right font-mono text-[10px] sm:text-xs text-[#6E6F74]">
+              Page {rightPageIndex + 1}
+            </div>
+          </div>
+
+          <div className="absolute left-1/2 top-0 w-2 sm:w-3 h-full -translate-x-1/2 bg-gradient-to-r from-[#d0d0d0] via-[#f0f0f0] to-[#d0d0d0] shadow-inner" />
         </div>
-      )}
-      
-      <div className="mt-auto pt-3 text-right font-mono text-[10px] sm:text-xs text-[#6E6F74]">
-        Page {rightPageIndex + 1}
       </div>
-    </div>
 
-    {/* Spine */}
-    <div className="absolute left-1/2 top-0 w-2 sm:w-3 h-full -translate-x-1/2 bg-gradient-to-r from-[#d0d0d0] via-[#f0f0f0] to-[#d0d0d0] shadow-inner" />
-  </div>
-</div>
-
-      {/* Navigation Buttons */}
       <div className="flex items-center gap-6 mt-10">
         <button
           onClick={prevPage}
@@ -807,7 +761,6 @@ function BookstoreSection() {
       ref={sectionRef}
       className="relative w-full min-h-screen paper-texture flex items-center justify-center py-20"
     >
-      {/* Red Circle CTA */}
       <div className="bookstore-circle w-[70vw] h-[70vw] max-w-[450px] max-h-[450px] bg-[#D13B3B] rounded-full flex flex-col items-center justify-center text-center p-8 shadow-2xl transition-transform duration-300 hover:scale-[1.02]">
         <h2 className="text-4xl lg:text-5xl font-script text-white mb-4">
           Get the latest book
@@ -831,7 +784,6 @@ function BookstoreSection() {
         </a>
       </div>
 
-      {/* Floating tool icons */}
       <div className="absolute top-[15%] left-[15%] opacity-20">
         <Compass className="w-10 h-10 text-[#111216]" />
       </div>
@@ -842,20 +794,32 @@ function BookstoreSection() {
   );
 }
 
-// Contact Section
+// Contact Section - UPDATED WITH WHATSAPP INTEGRATION
 function ContactSection() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      setTimeout(() => {
-        setFormData({ name: '', email: '', message: '' });
-        setSubmitted(false);
-      }, 3000);
-    }
+    
+    
+    const phoneNumber = '2349115716254';
+    
+    // Format the message
+    const text = `*New Contact Form Submission*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Message:* ${encodeURIComponent(formData.message)}`;
+    
+    // Create WhatsApp URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+    
+    // Show success state
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+    
+    // Reset form
+    setFormData({ name: '', email: '', message: '' });
   };
 
   return (
@@ -864,7 +828,6 @@ function ContactSection() {
       className="relative w-full min-h-screen bg-[#0E0F12] flex items-center justify-center py-20"
     >
       <div className="container mx-auto px-4">
-        {/* Envelope Container */}
         <div className="relative max-w-[650px] mx-auto">
           <div 
             className="relative rounded-lg shadow-2xl overflow-hidden"
@@ -880,9 +843,8 @@ function ContactSection() {
               </h2>
 
               <div className="flex flex-col lg:flex-row gap-8">
-                {/* Contact Form */}
-               
-    <form onSubmit={handleSubmit} className="flex-1 space-y-4">
+                {/* WhatsApp Contact Form */}
+                <form onSubmit={handleSubmit} className="flex-1 space-y-4">
                   <div>
                     <label className="block font-mono text-xs uppercase tracking-wider text-[#6E6F74] mb-1">
                       Name
@@ -923,10 +885,9 @@ function ContactSection() {
                     type="submit"
                     className="w-full px-6 py-3 bg-[#D13B3B] text-white rounded font-mono text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#b53232] transition-colors"
                   >
-                    {submitted ? 'Message Sent!' : <><Send className="w-4 h-4" /> Send Message</>}
+                    {submitted ? 'Opening WhatsApp...' : <><Send className="w-4 h-4" /> Send via WhatsApp</>}
                   </button>
                 </form>
-  
 
                 {/* Contact Info */}
                 <div className="lg:w-[180px] space-y-5">
@@ -990,7 +951,6 @@ function FooterSection() {
           © 2026 TAA Portfolio. All rights reserved.
         </p>
         <div className="flex items-center justify-center gap-5">
-    
           <a href="#contact" className="text-[#6E6F74] hover:text-white text-sm transition-colors">
             Contact
           </a>
@@ -1016,25 +976,18 @@ function App() {
 
   return (
     <>
-      {/* Preloader */}
       {isLoading && <Preloader onComplete={handlePreloaderComplete} />}
 
-      {/* Custom Cursor */}
       {!isLoading && <CustomCursor />}
 
-      {/* Floating Character */}
       {!isLoading && <FloatingCharacter />}
 
-      {/* Floating Background Tools */}
       {!isLoading && <FloatingTools />}
 
-      {/* Back to Top Button */}
       {!isLoading && <BackToTop />}
 
-      {/* Floating Bookstore Icon */}
       {!isLoading && <BookstoreIcon />}
 
-      {/* Main Content */}
       <main className="relative">
         <HeroSection />
         <PaperPlaneSection />
@@ -1051,8 +1004,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
