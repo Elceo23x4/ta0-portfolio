@@ -56,17 +56,55 @@ main {
 }
 
 /* Custom cursor hover state - pencil gets bigger */
-.custom-cursor {
-  transition: transform 0.15s ease;
+
+
+/* Custom Cursor - Always on top */
+.custom-cursor-wrapper {
+  /* Ensure it doesn't get clipped */
+  mix-blend-mode: normal;
+  isolation: isolate;
 }
 
-.custom-cursor.hover {
-  transform: scale(1.3) !important;
+/* Hide default cursor on desktop */
+@media (min-width: 1024px) {
+  html,
+  html * {
+    cursor: none !important;
+  }
+  
+  /* But allow text selection cursor on inputs if needed */
+  input, 
+  textarea {
+    cursor: text !important;
+  }
 }
 
-.custom-cursor.hover svg {
-  filter: drop-shadow(3px 3px 5px rgba(209, 59, 59, 0.4));
+/* Mobile - show default cursor */
+@media (max-width: 1023px) {
+  .custom-cursor-wrapper {
+    display: none !important;
+  }
 }
+
+/* Ensure cursor is visible over all elements */
+.cursor-inner {
+  position: relative;
+  /* Offset so the pencil tip (0,0) is at mouse position */
+  margin-left: -2px;
+  margin-top: -2px;
+}
+
+/* Hover state - pencil grows but stays visible */
+.custom-cursor-wrapper.hovering .cursor-inner {
+  filter: drop-shadow(0 0 8px rgba(209, 59, 59, 0.6));
+}
+
+/* Fix for links/buttons that might clip the cursor */
+a, button {
+  position: relative;
+  z-index: 1; /* Lower than cursor */
+}
+
 
 /* Book card 3D effect */
 .book-3d {
