@@ -45,7 +45,7 @@ function Preloader({ onComplete }: { onComplete: () => void }) {
   );
 }
 
-// Custom Cursor Component
+
 // Custom Cursor Component - Pencil Style with Tip as Hotspot
 function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
